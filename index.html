@@ -1,32 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru-ru">
   <head>
-    <title>test3</title>
+    <title>test4</title>
   </head>
   <body>
 <span id="tst">0</span>
 <script>
 var i = 0;
-if (!("Notification" in window)) {
-  alert("Браузер не поддерживает API =(");
-} else if (Notification.permission === "granted") {
-  var notification = new Notification("Test message");
-  startNotificationTimer();
-} else if (Notification.permission !== 'denied') {
-  Notification.requestPermission(function(permission) {
-    if (permission === "granted") {
-      var notification = new Notification("Test message");
-      startNotificationTimer();
-    }
-  });
-}
-
-function startNotificationTimer() {
-  setInterval(function() {
-    document.getElementById('tst').innerHTML = ++i;
-    var notification = new Notification("Test message");
- }, 1500);
-}
+setInterval(function() {
+  document.getElementById('tst').innerHTML = ++i;
+}, 2000);
 </script>
   </body>
 </html>
