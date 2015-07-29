@@ -11,16 +11,21 @@ function notificate() {
     alert("Браузер не поддерживает API =(");
   } else if (Notification.permission === "granted") {
     var notification = new Notification("Test message");
+    startNotificationTimer();
   } else if (Notification.permission !== 'denied') {
     Notification.requestPermission(function (permission) {
       if (permission === "granted") {
         var notification = new Notification("Test message");
-        setInterval(function(){
-          var notification = new Notification("Test message");
-        }, 1500);
+        startNotificationTimer();
       }
     });
   }
+}
+
+function startNotificationTimer() {
+  setInterval(function(){
+    var notification = new Notification("Test message");
+ }, 1500);
 }
 </script>
   </body>
