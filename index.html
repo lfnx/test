@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru-ru">
   <head>
-    <title>test2</title>
+    <title>test3</title>
   </head>
   <body>
+<span id="tst">0</span>
 <script>
-
+var i = 0;
 if (!("Notification" in window)) {
   alert("Браузер не поддерживает API =(");
 } else if (Notification.permission === "granted") {
@@ -21,9 +22,9 @@ if (!("Notification" in window)) {
 }
 
 function startNotificationTimer() {
-  setInterval(function(){
+  setInterval(function() {
+    document.getElementById('tst').innerHTML = ++i;
     var notification = new Notification("Test message");
-    console.log('123');
  }, 1500);
 }
 </script>
