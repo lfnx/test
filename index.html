@@ -14,7 +14,9 @@ function notificate() {
   } else if (Notification.permission !== 'denied') {
     Notification.requestPermission(function (permission) {
       if (permission === "granted") {
-        var notification = new Notification("Message text");
+        setTimeout(function(){
+          var notification = new Notification("Test message");
+        }, 1500);
       }
     });
   }
