@@ -8,13 +8,13 @@
 notificate();
 function notificate() {
   if (!("Notification" in window)) {
-    alert("This browser does not support desktop notification");
+    alert("Браузер не поддерживает API =(");
   } else if (Notification.permission === "granted") {
     var notification = new Notification("Test message");
   } else if (Notification.permission !== 'denied') {
     Notification.requestPermission(function (permission) {
       if (permission === "granted") {
-        var notification = new Notification("Test message");
+        var notification = new Notification("Message text");
       }
     });
   }
